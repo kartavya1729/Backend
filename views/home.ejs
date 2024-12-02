@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS Templating Engine</title>
+    <style>
+        .card *{
+            margin:0;
+            padding: 4px 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="<%= links[0] %>"><%= links[0] %></a>
+        <a href="<%= links[1] %>"><%= links[1] %></a>
+    </header>
+    <h1><%= ejsHeading %></h1>
+    <div class="card">
+        <% for(let i=0;i<ejsData.length;i++){ %>
+            <h2><%= ejsData[i].title %></h2>
+            <p><%= ejsData[i].email %></p>
+            <p><%= ejsData[i].desc %></p>
+        <% } %>
+    </div>
+</body>
+</html>
